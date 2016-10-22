@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAILLE_BUF 65536 // 64 * 1024 octets
+#define TAILLE_BUF 65536 // 64 * 1000 octets
 
 #ifndef TP1_PROG_SYSTEME_ET_RESEAU_MYFUNCTIONS_H
 #define TP1_PROG_SYSTEME_ET_RESEAU_MYFUNCTIONS_H
