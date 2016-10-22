@@ -8,7 +8,7 @@
 int main(int argc, char **argv) {
     // Test sur le nombre d'arguents
     if (argc != 3) {
-        fprintf(stderr, "Erreur sur le mombre d'arguments\n");
+        printf("Erreur sur le mombre d'arguments\n");
         exit(-1);
     } else {
         int src, dst;
@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
         //Boucle de copie
         while (1) {
             ssize_t nboctet_read = my_read(src, buf, sizeof(buf));
-            if (!nboctet_read) break;
+            if (nboctet_read == 0) break;
             my_write(dst, buf, nboctet_read);
         }
         close(src);

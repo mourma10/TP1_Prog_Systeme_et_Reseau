@@ -13,7 +13,7 @@
 int my_open(const char *file, int flags, mode_t mode) {
     int fd = open(file, flags, mode);
     if (fd == -1) {
-        fprintf(stderr, "Erreur d'ouverture[my_open] de %s \n [Erreur]: %s\n", file, strerror(errno));
+        printf("Erreur d'ouverture[my_open] de %s \n [Erreur]: %s\n", file, strerror(errno));
         exit(-1);
     } else
         return fd;
@@ -25,7 +25,7 @@ int my_open(const char *file, int flags, mode_t mode) {
  **********************/
 void my_fstat(int file, struct stat *buf) {
     if (fstat(file, buf) == -1) {
-        fprintf(stderr, "Erreur my_fstat\n [Erreur]: %s\n", strerror(errno));
+        printf("Erreur my_fstat\n [Erreur]: %s\n", strerror(errno));
         exit(-1);
     }
 }
@@ -42,7 +42,7 @@ ssize_t my_read(int file, char *buf, ssize_t size) {
      */
     ssize_t r = read(file, buf, (size_t) size);
     if (r == -1) {
-        fprintf(stderr, "Erreur my_read\n [Erreur]: %s\n", strerror(errno));
+        printf("Erreur my_read\n [Erreur]: %s\n", strerror(errno));
         return 0;
     } else return r;
 
@@ -61,7 +61,7 @@ void my_write(int file, char *buf, ssize_t size) {
          */
         ssize_t w = write(file, buf, (size_t) size);
         if (w == -1) {
-            fprintf(stderr, "Erreur my_write\n [Erreur]: %s\n", strerror(errno));
+            printf("Erreur my_write\n [Erreur]: %s\n", strerror(errno));
             exit(-1);
         } else {
             size -= w;
