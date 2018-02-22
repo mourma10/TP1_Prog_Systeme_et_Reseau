@@ -5,6 +5,7 @@
 #include "myfunctions.h"
 
 int main(int argc, char **argv) {
+	/*test test test*/
     //Test du nombre d'arguments
     if (argc != 3) {
         printf("Erreur sur le mombre d'arguments\n");
